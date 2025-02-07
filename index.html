@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebLift - Marketing Digital</title>
+    <link rel="stylesheet" href="../WebLift/style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="app" class="container">
+        <header class="header">
+            <img src="/images/weblift.png" alt="WebLift Logo" class="logo">
+            <h1 class="title">WebLift</h1>
+            <p class="subtitle">Conecta tu negocio con el éxito digital.</p>
+        </header>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="services" class="services">
+                <h2>Servicios</h2>
+                <div class="service" v-for="service in services" :key="service.id">
+                    <h3>Creacion de pagina Web</h3>
+                    <p>Desarrrollamos tu sitio Web a medida</p>
+                    <h3>Perfil de redes sosciales</h3>
+                    <p>Gestion total de redes</p>
+                </div>
+            </section>
+
+            <section id="about" class="about">
+                <h2>Sobre Nosotros</h2>
+                <p>En WebLift, nos especializamos en ayudar a empresas a crecer en el mundo digital mediante estrategias personalizadas de marketing digital y gestión de redes sociales.</p>
+            </section>
+
+            <section id="contact" class="contact">
+                <h2>Contáctanos</h2>
+                <form @submit.prevent="submitForm">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" v-model="form.name" required>
+
+                    <label for="email">Correo:</label>
+                    <input type="email" id="email" v-model="form.email" required>
+
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" v-model="form.message" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 WebLift. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
